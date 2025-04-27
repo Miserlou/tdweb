@@ -13,6 +13,8 @@ const records = [
     backCover: '/td001.png',
     soundCloud: '',
     bandCamp: '',
+    sideA: 'Mister Producer',
+    sideB: 'Mister Producer (Steppas Version)',
   },
   {
     title: 'Custom Dubplates',
