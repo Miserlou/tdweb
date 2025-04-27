@@ -5,27 +5,52 @@ import records from '../data/records';
 export default function RecordDetail() {
   const { catalogNumber } = useParams();
   const record = records.find(r => r.catalogNumber === catalogNumber);
+  const [selectedImage, setSelectedImage] = React.useState(record?.frontCover);
+
   if (!record) return <p className="pt-24 container mx-auto px-4">Not found.</p>;
 
+  const images = [record.frontCover, record.backCover, record.sleeveArt];
+
   return (
-    <div className="pt-24 container mx-auto px-4 text-white">
-      <div className="bg-black shadow rounded p-6 space-y-4">
-        <h2 className="text-3xl font-bold">{record.title}</h2>
-        <p className="text-gray-300">by {record.artist}</p>
-        <div className="flex flex-col md:flex-row gap-6">
-          <img src={record.frontCover} alt="front cover" className="w-full md:w-1/3 rounded" />
-          <img src={record.backCover} alt="back cover" className="w-full md:w-1/3 rounded" />
-          <img src={record.sleeveArt} alt="sleeve art" className="w-full md:w-1/3 rounded" />
+    <div className="w-screen pt-24 mx-auto px-4 text-white">
+      <div class="container mx-auto">
+        <div className="mx-auto flex flex-col md:flex-row gap-8">
+          
+
+          <div className="md:w-1/2 m-2">
+            <div className="bg-gray-950 shadow rounded p-6 space-y-4">
+              <h2 className="text-3xl font-bold"><strong>{record.title}</strong> <span className="text-neutral-500 text-sm">{record.catalogNumber}</span></h2>
+              <p className="text-2xl text-gray-200"><strong>{record.artist}</strong></p>
+
+              <p className="text-gray-300">{record.description}</p>
+
+              <Link to="/" className="text-gray-50 font-semibold hover:underline">← Back to list</Link>
+            </div>
+          </div>
+
+          <div className="flex flex-col items-center md:w-1/2 m-2">
+            <div className="w-full bg-black p-4 rounded">
+              <img
+                src={selectedImage}
+                alt="Selected"
+                className="w-full rounded object-contain"
+              />
+            </div>
+            <div className="flex gap-2 mt-4">
+              {images.map((img, index) => (
+                <img
+                  key={index}
+                  src={img}
+                  alt={`Thumbnail ${index}`}
+                  className="w-16 h-16 object-cover rounded cursor-pointer hover:opacity-75"
+                  onClick={() => setSelectedImage(img)}
+                />
+              ))}
+            </div>
+          </div>
+
+
         </div>
-        <ul className="list-disc list-inside space-y-2">
-          <li><strong>Catalog:</strong> {record.catalogNumber}</li>
-          <li><strong>Imprint:</strong> {record.imprint}</li>
-          <li><strong>Release Date:</strong> {record.releaseDate}</li>
-          <li><strong>Genre:</strong> {record.genre}</li>
-          <li><strong>In Stock:</strong> {record.inStock ? 'Yes' : 'No'}</li>
-        </ul>
-        <p>{record.description}</p>
-        <Link to="/" className="text-blue-400 hover:underline">← Back to list</Link>
       </div>
     </div>
   );
