@@ -27,14 +27,14 @@ export default function RecordDetail() {
               {record.sideA && <p className="text-gray-400">Side A - <i>{record.sideA}</i></p>}
               {record.sideB && <p className="text-gray-400">Side B - <i>{record.sideB}</i></p>}
 
-              <Link to="/" className="text-gray-50 font-semibold hover:underline">← Back to list</Link>
+              <Link to={`${import.meta.env.BASE_URL}`} className="text-gray-50 font-semibold hover:underline">← Back to list</Link>
             </div>
           </div>
 
           <div className="flex flex-col items-center md:w-1/2 m-2">
             <div className="w-full bg-black p-4 rounded">
               <img
-                src={selectedImage}
+                src={`${import.meta.env.BASE_URL}${selectedImage}`}
                 alt="Selected"
                 className="w-full rounded object-contain"
               />
@@ -43,7 +43,7 @@ export default function RecordDetail() {
               {images.map((img, index) => (
                 <img
                   key={index}
-                  src={img}
+                  src={`${import.meta.env.BASE_URL}${img}`}
                   alt={`Thumbnail ${index}`}
                   className="w-16 h-16 object-cover rounded cursor-pointer hover:opacity-75"
                   onClick={() => setSelectedImage(img)}

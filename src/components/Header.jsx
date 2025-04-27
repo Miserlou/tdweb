@@ -46,9 +46,9 @@ export default function Header() {
 
         {/* Centered Logo */}
         <div className="w-1/3 md:w-1/4 top-4 justify-center flex-shrink-0">
-          <Link to="/" onClick={() => setOpen(false)}>
-            <img src="/logo.png" className="w-full hidden sm:block" alt="Tiny Diamond Logo" />
-            <img src="/logo_sm.png" className="w-full block sm:hidden" alt="Tiny Diamond Logo" />
+          <Link to={`${import.meta.env.BASE_URL}`} onClick={() => setOpen(false)}>
+            <img src={`${import.meta.env.BASE_URL}logo.png`} className="w-full hidden sm:block" alt="Tiny Diamond Logo" />
+            <img src={`${import.meta.env.BASE_URL}logo_sm.png`}className="w-full block sm:hidden" alt="Tiny Diamond Logo" />
           </Link>
         </div>
 
@@ -60,22 +60,22 @@ export default function Header() {
         >
         <nav className="mt-16">
           <ul className="flex flex-col">
-            <Link to="/" onClick={() => setOpen(false)}>
+            <Link to={`${import.meta.env.BASE_URL}`} onClick={() => setOpen(false)}>
               <li className="px-6 py-4 hover:bg-gray-100 hover:cursor-pointer text-gray-950 font-semibold no-underline">
                 Home
               </li>
             </Link>
-            <Link to="/submissions" onClick={() => setOpen(false)}>
+            <Link to={`${import.meta.env.BASE_URL}submissions`} onClick={() => setOpen(false)}>
               <li className="px-6 py-4 hover:bg-gray-100 hover:cursor-pointer text-black font-semibold no-underline">
                 Submissions
               </li>
             </Link>
-            <Link to="/about" onClick={() => setOpen(false)}>
+            <Link to={`${import.meta.env.BASE_URL}about`} onClick={() => setOpen(false)}>
               <li className="px-6 py-4 hover:bg-gray-100 hover:cursor-pointer text-black font-semibold no-underline">
                 About
               </li>
             </Link>
-            <Link to="/contact" onClick={() => setOpen(false)}>
+            <Link to={`${import.meta.env.BASE_URL}contact`} onClick={() => setOpen(false)}>
               <li className="px-6 py-4 hover:bg-gray-100 hover:cursor-pointer text-black font-semibold no-underline">
                 Contact
               </li>
