@@ -13,7 +13,7 @@ export default function App() {
   return (
     <>
       <Header />
-      <Routes>
+      <Routes basename="/tdweb/">
         <Route path="/"               element={<RecordList />} />
         <Route path="/about"          element={<About />} />
         <Route path="/contact"        element={<Contact />} />
