@@ -27,7 +27,7 @@ export default function RecordDetail() {
               {record.sideA && <p className="text-gray-400">Side A - <i>{record.sideA}</i></p>}
               {record.sideB && <p className="text-gray-400">Side B - <i>{record.sideB}</i></p>}
 
-              <Link to={`${import.meta.env.BASE_URL}`} className="text-gray-50 font-semibold hover:underline">← Back to list</Link>
+              <Link to={`/`} className="text-gray-50 font-semibold hover:underline">← Back to list</Link>
             </div>
           </div>
 

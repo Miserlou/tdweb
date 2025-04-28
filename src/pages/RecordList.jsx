@@ -4,7 +4,7 @@ import records from '../data/records';
 
 export default function RecordList() {
   return (
-  <div className="w-screen pt-24 overflow-hidden">
+  <div className="w-screen pt-12 overflow-hidden">
     <div className="pt-24 pb-12 bg-neutral-100 w-3/4 mx-auto min-h-screen">
       <div className="container mx-auto px-4">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">

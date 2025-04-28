@@ -13,7 +13,7 @@ export default function App() {
   return (
     <>
       <Header />
-      <Routes basename="/tdweb/">
+      <Routes basename={`${import.meta.env.BASE_URL}`} >
         <Route path="/"               element={<RecordList />} />
         <Route path="/about"          element={<About />} />
         <Route path="/contact"        element={<Contact />} />
