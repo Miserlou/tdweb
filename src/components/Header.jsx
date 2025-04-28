@@ -56,7 +56,7 @@ export default function Header() {
         <div
           className={`fixed top-0 left-0 h-full w-64 bg-white text-black transform ${
             open ? 'translate-x-0' : '-translate-x-full'
-          } transition-transform duration-300 ease-in-out z-40 shadow-lg`}
+          } transition-transform duration-300 ease-in-out z-40 shadow-lg"`}
         >
         <nav className="mt-16">
           <ul className="flex flex-col">

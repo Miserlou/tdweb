@@ -1,5 +1,22 @@
 const records = [
   {
+    title: 'Clova VIP',
+    artist: 'Baron',
+    catalogNumber: 'TD002',
+    imprint: 'Futureroots',
+    releaseDate: '2024-06-15',
+    genre: 'dub',
+    inStock: true,
+    description: 'West coast bass wizard Tsou comes out of the gate hot for our first release with a dubwise spacebass skanker!',
+    sleeveArt: 'td001b.png',
+    frontCover:'td001.png',
+    backCover: 'td001b.png',
+    soundCloud: '',
+    bandCamp: '',
+    sideA: 'Mister Producer',
+    sideB: 'Mister Producer (Steppas Version)',
+  },
+  {
     title: 'Mister Producer',
     artist: 'Tsou',
     catalogNumber: 'TD001',

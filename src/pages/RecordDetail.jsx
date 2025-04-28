@@ -5,11 +5,11 @@ import records from '../data/records';
 export default function RecordDetail() {
   const { catalogNumber } = useParams();
   const record = records.find(r => r.catalogNumber === catalogNumber);
-  const [selectedImage, setSelectedImage] = React.useState(record?.frontCover);
+  const [selectedImage, setSelectedImage] = React.useState(record?.sleeveArt);
 
   if (!record) return <p className="pt-24 container mx-auto px-4">Not found.</p>;
 
-  const images = [record.frontCover, record.backCover, record.sleeveArt];
+  const images = [record.sleeveArt, record.frontCover, record.backCover];
 
   return (
     <div className="w-screen pt-24 mx-auto px-4 text-white">
